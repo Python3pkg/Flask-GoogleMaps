@@ -77,7 +77,7 @@ class Map(object):
             raise AttributeError('markers accepts only dict, list and tuple')
 
         if isinstance(markers, dict):
-            for icon, marker_list in markers.items():
+            for icon, marker_list in list(markers.items()):
                 for marker in marker_list:
                     marker_dict = self.build_marker_dict(marker, icon=icon)
                     self.add_marker(**marker_dict)
